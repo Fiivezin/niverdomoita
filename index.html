@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parabéns!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: relative;
+    }
+    .button {
+      padding: 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      position: absolute;
+    }
+    .button:hover {
+      transform: translateY(-5px);
+    }
+    .button.pix {
+      left: calc(50% - 110px);
+    }
+    .button.message {
+      left: calc(50% - 90px);
+      top: 130px; /* Ajuste para alinhar com o botão "Enviar R$1000 no Pix" */
+    }
+    .message {
+      padding: 10px 20px;
+      background-color: #fff;
+      border: 2px solid #007bff;
+      border-radius: 10px;
+      text-align: center;
+      color: #007bff;
+      font-weight: bold;
+      position: absolute;
+      top: 80px;
+      left: calc(50% - 90px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="button pix" onmouseover="moveButton('.pix')">Receber R$1000 no Pix</div>
+    <a href="outra_pagina.html" class="button message">Mensagem Misteriosa</a>
+  </div>
+  <script>
+    function moveButton(buttonClass) {
+      var button = document.querySelector(buttonClass);
+      var containerWidth = window.innerWidth;
+      var containerHeight = window.innerHeight;
+      var buttonWidth = button.offsetWidth;
+      var buttonHeight = button.offsetHeight;
+      var newLeft = Math.random() * (containerWidth - buttonWidth);
+      var newTop = Math.random() * (containerHeight - buttonHeight);
+      button.style.left = newLeft + "px";
+      button.style.top = newTop + "px";
+    }
+  </script>
+</body>
+</html>
